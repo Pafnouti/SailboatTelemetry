@@ -7,10 +7,6 @@ var path = require('path');
 var routes = require('./routes/index');
 var bodyParser = require('body-parser');
 
-const mongoose = require('mongoose');
-require('./models/Attitude');
-const Attitude = mongoose.model('Attitude');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -77,13 +73,3 @@ io.on('connection', function (socket) {
   });
 
 });
-
-
-/*
-const attitude = new Attitude(JSONdata);
-attitude.save()
-  .then(() => { res.send(attitude); })
-  .catch((err) => {
-    console.log(err);
-    res.send('Sorry! Something went wrong.');
-  });*/
