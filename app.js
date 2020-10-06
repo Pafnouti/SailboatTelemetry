@@ -54,7 +54,7 @@ io.on('connection', function (socket) {
 
   socket.on('newMission', function (data) {
     waypoints = data; //sanitize here ?
-    console.log(data);
+    console.log(waypoints);
     socket.broadcast.emit('waypoints', waypoints);
   });
 
